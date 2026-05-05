@@ -8,9 +8,10 @@
     <style>
         :root {
             --gold: #c5a059;
-            --gold-gradient: linear-gradient(135deg, #f5e6d3 0%, #c5a059 50%, #8a6d3b 100%);
-            --dark-bg: #121212;
-            --card-bg: #1c140d;
+            --gold-light: #f5e6d3;
+            --gold-dark: #8a6d3b;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a140f;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,21 +28,22 @@
 
         .container { width: 100%; max-width: 400px; text-align: center; }
 
-        /* LOGO SVG INTEGRÉ - 100% TRANSPARENT */
-        .logo-container {
-            margin: 40px 0 20px 0;
+        /* LOGO SVG - DESIGN PROFESSIONNEL */
+        .logo-box {
+            margin: 30px 0;
             display: flex;
             justify-content: center;
         }
 
         .logo-svg {
-            width: 280px;
+            width: 100%;
+            max-width: 300px;
             height: auto;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.8));
         }
 
         .status {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: #4CAF50;
             display: flex;
@@ -49,67 +51,70 @@
             justify-content: center;
             gap: 8px;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
         .dot { height: 10px; width: 10px; background-color: #4CAF50; border-radius: 50%; animation: pulse 2s infinite; }
-
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
-        /* BOUTONS */
+        /* BOUTONS ACTIONS */
         .btn {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 22px;
-            margin-bottom: 15px;
-            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            transition: 0.2s;
         }
 
         .btn-call {
-            background: var(--gold-gradient);
-            color: #121212;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
         }
 
-        .btn-call span { font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px; }
-        .btn-call strong { font-size: 1.6rem; }
+        .btn-call span { font-size: 0.7rem; text-transform: uppercase; margin-bottom: 2px; }
+        .btn-call strong { font-size: 1.5rem; }
 
         .btn-whatsapp {
             background-color: transparent;
-            border: 2px solid #25D366;
+            border: 1.5px solid #25D366;
             color: #25D366;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            flex-direction: row;
+            gap: 8px;
         }
 
-        /* PRESTATIONS */
+        /* SECTION SERVICES */
         .services-card {
             background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 20px;
             text-align: left;
             margin-top: 20px;
             border: 1px solid rgba(197, 160, 89, 0.2);
         }
 
-        h2 { color: var(--gold); font-size: 1rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
+        h2 { color: var(--gold); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; border-bottom: 1px solid rgba(197, 160, 89, 0.2); padding-bottom: 10px; }
         ul { list-style: none; }
-        li { margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 12px; }
-        li::before { content: "✓"; color: var(--gold); font-weight: 700; }
+        li { margin-bottom: 10px; font-size: 0.85rem; display: flex; align-items: center; gap: 10px; }
+        li::before { content: "✓"; color: var(--gold); font-weight: 900; }
 
-        .footer { margin-top: 40px; font-size: 0.8rem; opacity: 0.7; line-height: 1.8; }
-        .rncp { color: var(--gold); font-weight: 700; margin-top: 10px; }
+        .footer { margin-top: 30px; font-size: 0.75rem; opacity: 0.6; line-height: 1.6; }
+        .rncp { color: var(--gold); font-weight: 700; margin-top: 8px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="logo-container">
-        <svg class="logo-svg" viewBox="0 0 350 120" xmlns="http://www.w3.org/2000/svg">
+    <div class="logo-box">
+        <svg class="logo-svg" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style="stop-color:#f5e6d3;stop-opacity:1" />
@@ -117,24 +122,32 @@
                     <stop offset="100%" style="stop-color:#8a6d3b;stop-opacity:1" />
                 </linearGradient>
             </defs>
-            <path d="M50 20 L80 20 L80 60 C80 80 50 95 50 95 C50 95 20 80 20 60 L20 20 Z" fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
-            <text x="35" y="65" font-family="Cinzel, serif" font-size="32" fill="url(#goldGrad)" font-weight="bold">JL</text>
-            <text x="100" y="55" font-family="Cinzel, serif" font-size="38" fill="url(#goldGrad)" font-weight="bold">John Lock</text>
-            <text x="135" y="85" font-family="Montserrat, sans-serif" font-size="18" fill="url(#goldGrad)" letter-spacing="4">SERRURERIE</text>
-            <path d="M280 75 L330 75 M315 75 L315 85 M325 75 L325 85" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="270" cy="75" r="8" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+            
+            <path d="M200 10 L230 10 L230 40 C230 60 200 75 200 75 C200 75 170 60 170 40 L170 10 Z" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+            <text x="200" y="48" font-family="Cinzel, serif" font-size="28" fill="url(#goldGrad)" font-weight="bold" text-anchor="middle">JL</text>
+            
+            <text x="200" y="115" font-family="Cinzel, serif" font-size="42" fill="url(#goldGrad)" font-weight="bold" text-anchor="middle" letter-spacing="2">JOHN LOCK</text>
+            <text x="200" y="140" font-family="Montserrat, sans-serif" font-size="14" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="6">SERRURERIE</text>
+            
+            <g transform="translate(145, 155)">
+                <circle cx="10" cy="5" r="7" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+                <line x1="17" y1="5" x2="100" y2="5" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="85" y1="5" x2="85" y2="12" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="95" y1="5" x2="95" y2="12" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+            </g>
         </svg>
     </div>
 
     <div class="status"><span class="dot"></span> Disponible : Intervention < 30 min</div>
 
     <a href="tel:0615919757" class="btn btn-call">
-        <span>Urgence ou Dépannage</span>
+        <span>Appeler le serrurier</span>
         <strong>06 15 91 97 57</strong>
     </a>
 
     <a href="https://wa.me/33615919757" class="btn btn-whatsapp">
-        💬 ENVOYER UNE PHOTO (WA)
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-2.277 0-4.125 1.848-4.125 4.125 0 .813.235 1.56.643 2.188l-.683 2.503 2.56-.672c.5.306 1.085.485 1.713.485 2.277 0 4.125-1.848 4.125-4.125s-1.848-4.125-4.125-4.125zM17.5 12c0 3.037-2.463 5.5-5.5 5.5-1.037 0-2.012-.29-2.843-.79L5.5 18l1.32-4.723C6.307 12.75 6 11.906 6 11c0-3.037 2.463-5.5 5.5-5.5s5.5 2.463 5.5 5.5z"/></svg>
+        ENVOYER UNE PHOTO (WA)
     </a>
 
     <div class="services-card">
