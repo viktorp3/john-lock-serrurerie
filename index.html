@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serrurerie Pro - Dépannage 24/7</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark-bg: #1c140d; /* Ton brun sombre de ta carte */
+            --card-bg: #2a1f15;
+            --text-light: #f5e6d3;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            /* Application de Montserrat pour tout le site */
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Header avec Logo */
+        .header {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Style pour l'image du logo */
+        .logo-img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .status {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #4CAF50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-transform: uppercase;
+        }
+
+        /* Point vert clignotant */
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        /* Boutons d'action */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .btn:active { transform: scale(0.98); }
+
+        .btn-call {
+            background: linear-gradient(135deg, #d4af37 0%, #a67c00 100%);
+            color: #1a140d;
+            flex-direction: column;
+        }
+
+        .btn-call span { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 4px; }
+        .btn-call strong { font-size: 1.5rem; font-weight: 700; }
+
+        .btn-whatsapp {
+            background-color: transparent;
+            border: 2px solid #25D366;
+            color: #25D366;
+            font-weight: 700;
+            font-size: 1rem;
+            gap: 10px;
+        }
+
+        /* Section Prestations */
+        .services-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: left;
+            margin-top: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+        }
+
+        h2 {
+            color: var(--gold);
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        ul { list-style: none; }
+
+        /* Modernisation de la liste avec des icônes SVG inline */
+        li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 1.4;
+        }
+
+        /* SVG Icône de clé pour chaque point */
+        .service-icon {
+            width: 16px;
+            height: 16px;
+            fill: var(--gold);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .rncp {
+            color: var(--gold);
+            font-weight: 600;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img src="URL_DE_TON_LOGO_PREMIUM.png" alt="Logo John Lock - Serrurerie" class="logo-img">
+        
+        <div class="status"><span class="dot"></span> Disponible : Intervention < 30 min</div>
+    </div>
+
+    <a href="tel:0615919757" class="btn btn-call">
+        <span>Appeler maintenant</span>
+        <strong>06 15 91 97 57</strong>
+    </a>
+
+    <a href="https://wa.me/33615919757" class="btn btn-whatsapp">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-2.277 0-4.125 1.848-4.125 4.125 0 .813.235 1.56.643 2.188l-.683 2.503 2.56-.672c.5.306 1.085.485 1.713.485 2.277 0 4.125-1.848 4.125-4.125s-1.848-4.125-4.125-4.125zM17.5 12c0 3.037-2.463 5.5-5.5 5.5-1.037 0-2.012-.29-2.843-.79L5.5 18l1.32-4.723C6.307 12.75 6 11.906 6 11c0-3.037 2.463-5.5 5.5-5.5s5.5 2.463 5.5 5.5z"/></svg>
+        ENVOYER UNE PHOTO (WA)
+    </a>
+
+    <div class="services-card">
+        <h2>Mes prestations</h2>
+        <ul>
+            <li>
+                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11Z" fill="#c5a059" stroke-width="2"/></svg>
+                Ouverture de porte — urgence
+            </li>
+            <li>
+                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11Z" fill="#c5a059" stroke-width="2"/></svg>
+                Changement cylindre & renforcement
+            </li>
+            <li>
+                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11Z" fill="#c5a059" stroke-width="2"/></svg>
+                Pose de serrure 3 points
+            </li>
+            <li>
+                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11Z" fill="#c5a059" stroke-width="2"/></svg>
+                Sécurisation après effraction
+            </li>
+            <li>
+                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11Z" fill="#c5a059" stroke-width="2"/></svg>
+                Devis & rapport d'intervention
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        📍 Paris 12 • Île-de-France<br>
+        7j/7 — 24h/24<br>
+        <div class="rncp">N° RNCP37797 — France Compétences</div>
+    </div>
+</div>
+
+</body>
+</html>
