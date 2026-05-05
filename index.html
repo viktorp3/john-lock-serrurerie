@@ -4,196 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Lock - Serrurerie Paris 12</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
-            --dark-bg: #1c140d; 
-            --card-bg: #2a1f15;
-            --text-light: #f5e6d3;
-            --white: #ffffff;
+            --gold-gradient: linear-gradient(135deg, #f5e6d3 0%, #c5a059 50%, #8a6d3b 100%);
+            --dark-bg: #121212;
+            --card-bg: #1c140d;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--dark-bg);
-            color: var(--text-light);
+            color: #f5e6d3;
             display: flex;
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
         }
 
-        .container {
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
+        .container { width: 100%; max-width: 400px; text-align: center; }
 
-        .header {
-            margin: 30px 0;
+        /* LOGO SVG INTEGRÉ - 100% TRANSPARENT */
+        .logo-container {
+            margin: 40px 0 20px 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
 
-        .logo-img {
-            width: 100%;
-            max-width: 250px;
+        .logo-svg {
+            width: 280px;
             height: auto;
-            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
         }
 
         .status {
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             color: #4CAF50;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
             text-transform: uppercase;
+            margin-bottom: 30px;
         }
 
-        .dot {
-            height: 8px;
-            width: 8px;
-            background-color: #4CAF50;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
+        .dot { height: 10px; width: 10px; background-color: #4CAF50; border-radius: 50%; animation: pulse 2s infinite; }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
-        }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
+        /* BOUTONS */
         .btn {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 20px;
+            padding: 22px;
             margin-bottom: 15px;
             border-radius: 12px;
             text-decoration: none;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
         }
-
-        .btn:active { transform: scale(0.98); }
 
         .btn-call {
-            background: linear-gradient(135deg, #d4af37 0%, #a67c00 100%);
-            color: #1a140d;
-            flex-direction: column;
+            background: var(--gold-gradient);
+            color: #121212;
         }
 
-        .btn-call span { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 4px; }
-        .btn-call strong { font-size: 1.5rem; font-weight: 700; }
+        .btn-call span { font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px; }
+        .btn-call strong { font-size: 1.6rem; }
 
         .btn-whatsapp {
             background-color: transparent;
             border: 2px solid #25D366;
             color: #25D366;
-            font-weight: 700;
             font-size: 1rem;
-            gap: 10px;
         }
 
+        /* PRESTATIONS */
         .services-card {
             background-color: var(--card-bg);
             border-radius: 15px;
             padding: 25px;
             text-align: left;
             margin-top: 20px;
-            border: 1px solid rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(197, 160, 89, 0.2);
         }
 
-        h2 {
-            color: var(--gold);
-            font-size: 1rem;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
+        h2 { color: var(--gold); font-size: 1rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
         ul { list-style: none; }
+        li { margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 12px; }
+        li::before { content: "✓"; color: var(--gold); font-weight: 700; }
 
-        li {
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            line-height: 1.4;
-        }
-
-        .service-icon {
-            width: 16px;
-            height: 16px;
-            fill: var(--gold);
-        }
-
-        .footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            opacity: 0.8;
-            line-height: 1.8;
-        }
-
-        .rncp {
-            color: var(--gold);
-            font-weight: 600;
-            margin-top: 10px;
-        }
+        .footer { margin-top: 40px; font-size: 0.8rem; opacity: 0.7; line-height: 1.8; }
+        .rncp { color: var(--gold); font-weight: 700; margin-top: 10px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <img src="logo.png" alt="John Lock Serrurerie" class="logo-img">
-        
-        <div class="status"><span class="dot"></span> Disponible : Intervention < 30 min</div>
+    <div class="logo-container">
+        <svg class="logo-svg" viewBox="0 0 350 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#f5e6d3;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#c5a059;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#8a6d3b;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path d="M50 20 L80 20 L80 60 C80 80 50 95 50 95 C50 95 20 80 20 60 L20 20 Z" fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
+            <text x="35" y="65" font-family="Cinzel, serif" font-size="32" fill="url(#goldGrad)" font-weight="bold">JL</text>
+            <text x="100" y="55" font-family="Cinzel, serif" font-size="38" fill="url(#goldGrad)" font-weight="bold">John Lock</text>
+            <text x="135" y="85" font-family="Montserrat, sans-serif" font-size="18" fill="url(#goldGrad)" letter-spacing="4">SERRURERIE</text>
+            <path d="M280 75 L330 75 M315 75 L315 85 M325 75 L325 85" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="270" cy="75" r="8" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+        </svg>
     </div>
 
+    <div class="status"><span class="dot"></span> Disponible : Intervention < 30 min</div>
+
     <a href="tel:0615919757" class="btn btn-call">
-        <span>Appeler maintenant</span>
+        <span>Urgence ou Dépannage</span>
         <strong>06 15 91 97 57</strong>
     </a>
 
     <a href="https://wa.me/33615919757" class="btn btn-whatsapp">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-2.277 0-4.125 1.848-4.125 4.125 0 .813.235 1.56.643 2.188l-.683 2.503 2.56-.672c.5.306 1.085.485 1.713.485 2.277 0 4.125-1.848 4.125-4.125s-1.848-4.125-4.125-4.125zM17.5 12c0 3.037-2.463 5.5-5.5 5.5-1.037 0-2.012-.29-2.843-.79L5.5 18l1.32-4.723C6.307 12.75 6 11.906 6 11c0-3.037 2.463-5.5 5.5-5.5s5.5 2.463 5.5 5.5z"/></svg>
-        ENVOYER UNE PHOTO (WA)
+        💬 ENVOYER UNE PHOTO (WA)
     </a>
 
     <div class="services-card">
-        <h2>Mes prestations</h2>
+        <h2>Nos Prestations</h2>
         <ul>
-            <li>
-                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11Z" fill="#c5a059" stroke-width="2"/></svg>
-                Ouverture de porte — urgence
-            </li>
-            <li>
-                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11Z" fill="#c5a059" stroke-width="2"/></svg>
-                Changement cylindre & renforcement
-            </li>
-            <li>
-                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11Z" fill="#c5a059" stroke-width="2"/></svg>
-                Pose de serrure 3 points
-            </li>
-            <li>
-                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 14C8.34315 14 7 12.6569 7 11Z" fill="#c5a059" stroke-width="2"/></svg>
-                Sécurisation après effraction
-            </li>
-            <li>
-                <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 11C7 9.34315 8.34315 8 10 8C11.6569 8 13 9.34315 13 11C13 12.6569 11.6569 14 10 1
+            <li>Ouverture de porte — urgence</li>
+            <li>Changement cylindre & renforcement</li>
+            <li>Pose de serrure 3 points</li>
+            <li>Sécurisation après effraction</li>
+            <li>Devis & rapport d'intervention</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        📍 Paris 12 • Île-de-France<br>
+        7j/7 — 24h/24<br>
+        <div class="rncp">N° RNCP37797 — France Compétences</div>
+    </div>
+</div>
+
+</body>
+</html>
